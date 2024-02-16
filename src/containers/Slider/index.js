@@ -25,13 +25,13 @@ const Slider = () => {
 
   // console.log(byDateDesc)
   
-  const dates = () => {
+  // const dates = () => {
     // const testdate = new Date(data?.focus[0].date);
-    const testdate = getMonth(new Date(data?.focus[0].date))
-    console.log("test date is", testdate)
-  }
+    // const testdate = getMonth(new Date(data?.focus[0].date))
+    // console.log("test date is", testdate)
+  // }
   
-  dates()
+  // dates()
   
 // console.log(data?.focus[0].date)
 

@@ -29,15 +29,15 @@ const EventList = () => {
     return false;
   });
 
-  console.log("filteredEvent is", filteredEvents)
-  console.log("data.events is", data?.events)
-  console.log("type is", type)
+  // console.log("filteredEvent is", filteredEvents)
+  // console.log("data.events is", data?.events)
+  // console.log("type is", type)
 
 
   const changeType = (evtType) => {
     setCurrentPage(1);
     setType(evtType); // evtType : undefined
-    console.log("evtType is", evtType)
+    // console.log("evtType is", evtType)
   };
 
   const pageNumber = Math.floor((filteredEvents?.length || 0) / PER_PAGE) + 1;
