@@ -23,7 +23,7 @@ const Slider = () => {
     nextCard();
   });
 
-  // console.log(byDateDesc)
+  // console.log(byDateDesc.length)
   
   // const dates = () => {
     // const testdate = new Date(data?.focus[0].date);
@@ -41,7 +41,7 @@ const Slider = () => {
       {byDateDesc?.map((event, idx) => (
         <>
           <div
-            key={event.title}
+            key={event.date}
             className={`SlideCard SlideCard--${
               index === idx ? "display" : "hide"
             }`}
@@ -59,10 +59,11 @@ const Slider = () => {
             <div className="SlideCard__pagination">
               {byDateDesc.map((_, radioIdx) => (
                 <input
-                  key={`${event.id}`}
+                  // key={`${event.id}`}
+                  key={`${crypto.randomUUID()}`}
                   type="radio"
                   name="radio-button"
-                  checked={index === radioIdx}
+                  defaultChecked={index === radioIdx}
                 />
               ))}
             </div>

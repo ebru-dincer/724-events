@@ -32,7 +32,7 @@ export const DataProvider = ({ children }) => {
   });
 
   const lastEvent = data?.focus.sort((evtA, evtB) =>
-  new Date(evtA.date) > new Date(evtB.date) ? -1 : 1
+  new Date(evtA.date) < new Date(evtB.date) ? -1 : 1
   );
 
   const last = lastEvent?.[data.focus.length-1]
