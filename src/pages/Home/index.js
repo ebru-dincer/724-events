@@ -14,6 +14,13 @@ import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
   const {last} = useData()
+  // const lastEventCover = last?.events.cover[0]
+
+  // const lastEvent = last?.events.slice(-1) 
+
+  // console.log(lastEvent)
+  // console.log(lastEvent)
+
   return <>
     <header>
       <Menu />
