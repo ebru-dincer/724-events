@@ -37,8 +37,6 @@ export const DataProvider = ({ children }) => {
 
   const last = lastEvent?.[data.focus.length-1]
 
-
-  // const last = data?.events[data.events.length-1]
  
   return (
     <DataContext.Provider

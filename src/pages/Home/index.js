@@ -14,12 +14,6 @@ import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
   const {last} = useData()
-  // const lastEventCover = last?.events.cover[0]
-
-  // const lastEvent = last?.events.slice(-1) 
-
-  // console.log(lastEvent)
-  // console.log(lastEvent)
 
   return <>
     <header>
@@ -123,13 +117,17 @@ const Page = () => {
     <footer className="row">
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
-        <EventCard
-          imageSrc={last?.cover}
-          title={last?.title}
-          date={new Date(last?.date)}
-          small
-          label="boom"
-        />
+        {
+          last == null ? ("loading") : (
+            <EventCard
+            imageSrc={last?.cover}
+            title={last?.title}
+            date={new Date(last?.date)}
+            small
+            label="boom"
+          />
+          )
+        }
       </div>
       <div className="col contact">
         <h3>Contactez-nous</h3>

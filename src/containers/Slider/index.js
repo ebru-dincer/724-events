@@ -7,41 +7,27 @@ import "./style.scss";
 const Slider = () => {
   const { data } = useData();
   const [index, setIndex] = useState(0);
-  // const byDateDesc = data?.focus.sort((evtA, evtB) =>
-  //   new Date(evtA.date) < new Date(evtB.date) ? -1 : 1
-  // );
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
   new Date(evtA.date) > new Date(evtB.date) ? -1 : 1
   );
   const nextCard = () => {
-    setTimeout(
-      () => setIndex(index < byDateDesc.length - 1 ? index + 1 : 0),
-      5000
-    );
+    if (byDateDesc) {
+      setTimeout(
+        () => setIndex(index < byDateDesc.length - 1 ? index + 1 : 0),
+        5000
+      );
+    } 
   };
   useEffect(() => {
     nextCard();
   });
-
-  // console.log(byDateDesc.length)
-  
-  // const dates = () => {
-    // const testdate = new Date(data?.focus[0].date);
-    // const testdate = getMonth(new Date(data?.focus[0].date))
-    // console.log("test date is", testdate)
-  // }
-  
-  // dates()
-  
-// console.log(data?.focus[0].date)
-
 
   return (
     <div className="SlideCardList">
       {byDateDesc?.map((event, idx) => (
         <>
           <div
-            key={event.date}
+            key={event.title}
             className={`SlideCard SlideCard--${
               index === idx ? "display" : "hide"
             }`}
@@ -59,8 +45,7 @@ const Slider = () => {
             <div className="SlideCard__pagination">
               {byDateDesc.map((_, radioIdx) => (
                 <input
-                  // key={`${event.id}`}
-                  key={`${crypto.randomUUID()}`}
+                  key={`${event.id}`}
                   type="radio"
                   name="radio-button"
                   defaultChecked={index === radioIdx}
