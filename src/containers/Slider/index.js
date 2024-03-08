@@ -22,6 +22,7 @@ const Slider = () => {
     nextCard();
   });
 
+
   return (
     <div className="SlideCardList">
       {byDateDesc?.map((event, idx) => (
@@ -45,7 +46,8 @@ const Slider = () => {
             <div className="SlideCard__pagination">
               {byDateDesc.map((_, radioIdx) => (
                 <input
-                  key={`${crypto.randomUUID()}`}
+                  // key={`${crypto.randomUUID()}`}
+                  key={`${event.date}`}
                   type="radio"
                   name="radio-button"
                   defaultChecked={index === radioIdx}
